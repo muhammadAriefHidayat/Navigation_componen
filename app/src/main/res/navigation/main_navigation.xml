@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/pertamaFragment">
+
+    <fragment
+        android:id="@+id/pertamaFragment"
+        android:name="com.apps.navigation.PertamaFragment"
+        android:label="fragment_pertama"
+        tools:layout="@layout/fragment_pertama" >
+        <action
+            android:id="@+id/action_pertamaFragment_to_keduaFragment"
+            app:destination="@id/keduaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/keduaFragment"
+        android:name="com.apps.navigation.KeduaFragment"
+        android:label="fragment_kedua"
+        tools:layout="@layout/fragment_kedua" >
+        <action
+            android:id="@+id/action_keduaFragment_to_ketigaFragment"
+            app:destination="@id/ketigaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ketigaFragment"
+        android:name="com.apps.navigation.KetigaFragment"
+        android:label="fragment_ketiga"
+        tools:layout="@layout/fragment_ketiga" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Namanya Kosong" />
+    </fragment>
+</navigation>
